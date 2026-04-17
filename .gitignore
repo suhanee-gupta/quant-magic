@@ -9,6 +9,10 @@
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
+# Project-related
+data/
+models/
+
 # IPython
 profile_default/
 ipython_config.py
