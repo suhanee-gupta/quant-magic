@@ -70,4 +70,4 @@ test, and the combined conditional-coverage test (5% significance). Outputs:
 ## Notes
 
 - This is a research prototype, not financial advice.
-- The existing dataset uses Indian market tickers such as `RELIANCE.BO` and benchmark indices like `^BSESN`.
+- The existing dataset uses Indian market tickers such as `RELIANCE.NS` and benchmark indices like `^BSESN`.

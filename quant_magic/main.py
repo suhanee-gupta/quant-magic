@@ -7,12 +7,12 @@ from .backtest import run_backtest
 from .var_engine import run_var_analysis
 
 SENSEX_30 = [
-    'RELIANCE.BO',  'TCS.BO',       'HDFCBANK.BO',  'INFY.BO',      'ICICIBANK.BO',
-    'HINDUNILVR.BO','ITC.BO',       'SBIN.BO',      'BHARTIARTL.BO','KOTAKBANK.BO',
-    'LT.BO',        'AXISBANK.BO',  'ASIANPAINT.BO','MARUTI.BO',    'SUNPHARMA.BO',
-    'TITAN.BO',     'BAJFINANCE.BO','WIPRO.BO',     'ONGC.BO',      'NTPC.BO',
-    'POWERGRID.BO', 'ULTRACEMCO.BO','NESTLEIND.BO', 'BAJAJFINSV.BO','TATAMOTORS.NS',
-    'HCLTECH.BO',   'TATASTEEL.BO', 'JSWSTEEL.BO',  'M&M.BO',       'ADANIENT.BO',
+    'RELIANCE.NS',  'TCS.NS',       'HDFCBANK.NS',  'INFY.NS',      'ICICIBANK.NS',
+    'HINDUNILVR.NS','ITC.NS',       'SBIN.NS',      'BHARTIARTL.NS','KOTAKBANK.NS',
+    'LT.NS',        'AXISBANK.NS',  'ASIANPAINT.NS','MARUTI.NS',    'SUNPHARMA.NS',
+    'TITAN.NS',     'BAJFINANCE.NS','WIPRO.NS',     'ONGC.NS',      'NTPC.NS',
+    'POWERGRID.NS', 'ULTRACEMCO.NS','NESTLEIND.NS', 'BAJAJFINSV.NS','TMPV.NS',
+    'HCLTECH.NS',   'TATASTEEL.NS', 'JSWSTEEL.NS',  'M&M.NS',       'ADANIENT.NS',
 ]
 SENSEX_BENCHMARK = '^BSESN'
 
