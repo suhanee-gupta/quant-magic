@@ -42,6 +42,8 @@ def run_backtest(
 
     if train_returns.empty:
         raise ValueError("Training period is empty.")
+    if test_returns.empty:
+        raise ValueError("Test period is empty.")
 
     weights = get_markowitz_weights(train_returns)
     weights_series = pd.Series(weights, index=train_returns.columns).sort_values(ascending=False)
@@ -56,6 +58,8 @@ def run_backtest(
         "weights": weights_series,
         "portfolio": calculate_metrics(aligned_data["Portfolio"], "Markowitz Optimized Portfolio"),
         "benchmark": calculate_metrics(aligned_data["Benchmark"], "Benchmark"),
+        "asset_returns": daily_returns,
+        "test_start": test_returns.index[0],
     }
 
     if output_dir is not None:

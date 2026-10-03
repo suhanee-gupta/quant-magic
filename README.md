@@ -46,6 +46,27 @@ The script prints:
 - Calmar ratio
 - win rate
 
+## VaR engine and backtest
+
+```bash
+python -m quant_magic.main --var       # backtest, then VaR analysis
+python -m quant_magic.var_engine       # VaR analysis on its own (--window, --sims, --seed)
+```
+
+For each test-period day, one-day VaR at 95% and 99% is forecast from a rolling
+window (default 250 days) of the returns before that day, using three methods:
+
+- historical simulation
+- parametric (normal)
+- Monte Carlo (correlated normal asset returns from the window covariance matrix)
+
+Each method is validated with the Kupiec POF test, the Christoffersen independence
+test, and the combined conditional-coverage test (5% significance). Outputs:
+
+- `results/var_forecasts.csv` - daily return, VaR per method/level, breach flags
+- `results/var_backtest.csv` - expected vs actual exceedances, LR stats, p-values, pass/fail
+- `plots/var_exceedances_95.png`, `plots/var_exceedances_99.png` - P&L vs VaR with breaches
+
 ## Notes
 
 - This is a research prototype, not financial advice.
