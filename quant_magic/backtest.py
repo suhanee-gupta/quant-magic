@@ -14,9 +14,12 @@ def build_split(returns: pd.DataFrame, train_end: str, val_end: str):
     if not isinstance(returns, pd.DataFrame):
         raise TypeError("returns must be a pandas DataFrame.")
 
-    train = returns[:train_end]
-    val = returns[train_end:val_end]
-    test = returns[val_end:]
+    # Boundary dates belong to the earlier period so no day appears twice.
+    idx = returns.index
+    train_end, val_end = pd.Timestamp(train_end), pd.Timestamp(val_end)
+    train = returns[idx <= train_end]
+    val = returns[(idx > train_end) & (idx <= val_end)]
+    test = returns[idx > val_end]
     return train, val, test
 
 
